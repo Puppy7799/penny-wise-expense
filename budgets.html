@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6f7f4">
+  <meta name="description" content="Set thoughtful spending limits and track your monthly budgets with PennyWise.">
+  <title>Budgets · PennyWise</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/app.js" defer></script>
+</head>
+<body data-page="budgets">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="index.html" aria-label="PennyWise home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 3.5c-6.9 0-12.5 5.6-12.5 12.5S9.1 28.5 16 28.5 28.5 22.9 28.5 16 22.9 3.5 16 3.5Zm0 4.2a8.3 8.3 0 1 1 0 16.6 8.3 8.3 0 0 1 0-16.6Zm0 3.2a5.1 5.1 0 1 0 0 10.2 5.1 5.1 0 0 0 0-10.2Z" fill="currentColor"/><path d="M16 1v6.8M16 24.2V31" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span><span>PennyWise<span class="brand-period">.</span></span></a>
+      <div class="workspace-label">WORKSPACE</div><nav class="main-nav" aria-label="Main navigation"><a class="nav-link" href="index.html"><span class="nav-icon">⌂</span>Overview</a><a class="nav-link" href="transactions.html"><span class="nav-icon">⇄</span>Transactions</a><a class="nav-link active" href="budgets.html"><span class="nav-icon">◷</span>Budgets</a></nav>
+      <div class="sidebar-bottom"><div class="tip-card"><span class="tip-spark" aria-hidden="true">✦</span><p class="tip-eyebrow">MONEY MOMENT</p><p class="tip-copy">The secret to getting ahead is getting started.</p><span class="tip-author">— Mark Twain</span></div><button class="profile-button" type="button" aria-label="Your profile"><span class="avatar">JD</span><span class="profile-copy"><strong>Jamie Davis</strong><small>Personal account</small></span><span class="profile-more">···</span></button></div>
+    </aside>
+    <main class="main-content">
+      <header class="topbar"><button class="mobile-menu" type="button" aria-label="Open navigation" aria-expanded="false">☰</button><div class="breadcrumb"><span>Pages</span><span class="crumb-slash">/</span><strong>Budgets</strong></div><div class="topbar-actions"><span class="today-label" data-today></span><button class="icon-button notification-button" type="button" aria-label="Notifications">♧<i></i></button><span class="top-avatar">JD</span></div></header>
+      <div class="page-content">
+        <section class="page-heading"><div><p class="eyebrow">A PLAN THAT FEELS LIKE YOU</p><h1>Make room for what matters</h1><p class="heading-subtitle">Set a little aside for the things you love, and keep the rest in view.</p></div><button class="button button-primary" type="button" data-open-budget><span>＋</span> Create budget</button></section>
+        <section class="budget-hero">
+          <div class="budget-hero-copy"><p class="eyebrow" data-current-month-label>THIS MONTH AT A GLANCE</p><h2>A good month starts with a plan.</h2><p>You’ve got this. Keep an eye on your spending and give yourself credit for every smart choice.</p><a href="transactions.html" class="hero-link">Review transactions <span>→</span></a></div>
+          <div class="budget-hero-meter" aria-label="Total monthly budget usage"><div class="meter-ring"><div class="meter-ring-inner"><span data-budget-percent>0%</span><small>of budget</small></div></div></div>
+          <div class="budget-hero-stats"><div><span>Spent so far</span><strong data-budget-spent>$0</strong></div><div><span>Left to spend</span><strong data-budget-remaining>$0</strong></div></div>
+          <div class="hero-leaf hero-leaf-one" aria-hidden="true"></div><div class="hero-leaf hero-leaf-two" aria-hidden="true"></div>
+        </section>
+        <section class="budget-section-heading"><div><p class="eyebrow">YOUR PERSONAL PLAN</p><h2>Monthly budgets</h2></div><span class="month-chip" data-month-chip>◷ &nbsp;This month</span></section>
+        <section class="budget-card-grid" data-budget-cards></section>
+        <section class="budget-note"><span class="note-icon">✦</span><div><strong>Budgeting isn’t about restriction.</strong><p>It’s about making your money reflect what matters most to you.</p></div></section>
+        <footer class="page-footer"><span>Made for your peace of mind <span class="footer-heart">♥</span></span><span>© <span data-year>2026</span> PennyWise</span></footer>
+      </div>
+    </main>
+  </div>
+  <dialog class="modal-dialog" data-budget-dialog aria-labelledby="budget-dialog-title">
+    <form class="modal-card" data-budget-form novalidate>
+      <div class="modal-heading"><div><p class="eyebrow">MAKE A PLAN THAT WORKS FOR YOU</p><h2 id="budget-dialog-title">Create a budget</h2></div><button class="modal-close" type="button" data-close-dialog aria-label="Close">×</button></div>
+      <label class="form-field">Category<select name="category" required><option value="Food & dining">Food &amp; dining</option><option value="Shopping">Shopping</option><option value="Transport">Transport</option><option value="Bills">Bills</option><option value="Health">Health</option><option value="Entertainment">Entertainment</option><option value="Other">Other</option></select></label>
+      <label class="form-field">Monthly limit<div class="amount-input"><span>$</span><input name="limit" type="number" min="1" step="1" placeholder="500" required></div></label>
+      <p class="form-error" data-budget-error role="alert"></p><div class="modal-actions"><button class="button button-secondary" type="button" data-close-dialog>Cancel</button><button class="button button-primary" type="submit">Save budget</button></div>
+    </form>
+  </dialog>
+</body>
+</html>
